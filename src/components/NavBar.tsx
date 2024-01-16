@@ -4,7 +4,7 @@ import logo from "../assets/logo.webp";
 const NavBar = () => {
   return (
     <HStack>
-      <Image src={logo} />
+      <Image src={logo} boxSize="60px" />
     </HStack>
   );
 };
