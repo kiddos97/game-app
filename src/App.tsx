@@ -5,11 +5,11 @@ function App() {
   return (
     <Grid
       templateAreas={{
-        base: `"nav nav"`,
-        lg: `"aside main"`,
+        base: `"nav" "main"`,
+        lg: `"nav nav" "aside main"`,
       }}
     >
-      <GridItem area="nav" bg="coral">
+      <GridItem area="nav">
         <NavBar />
       </GridItem>
       <Show above="lg">
