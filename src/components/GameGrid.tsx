@@ -7,16 +7,16 @@ interface Game {
 }
 interface Props {
   count: number;
-  result: Game[];
+  results: Game[];
 }
-const Game_Grid = () => {
+const GameGrid = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
     apiClient
       .get<Props>("/games")
-      .then((res) => setGames(res.data.result))
+      .then((res) => setGames(res.data.results))
       .catch((err) => setError(err.message));
   });
   return (
@@ -28,4 +28,4 @@ const Game_Grid = () => {
   );
 };
 
-export default Game_Grid;
+export default GameGrid;
