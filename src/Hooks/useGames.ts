@@ -27,16 +27,16 @@ const useGames = () => {
   
     useEffect(() => {
         const controller = new AbortController();
-        setLoading(!isLoading);
+        setLoading(true);
       apiClient
         .get<Props>("/games", {signal: controller.signal})
         .then((res) => {
             setGames(res.data.results)
-            setLoading(isLoading)})
+            setLoading(false)})
         .catch((err) => {
             if(err instanceof CanceledError)
             setError(err.message)
-            setLoading(isLoading)});
+            setLoading(false)});
 
 
 
